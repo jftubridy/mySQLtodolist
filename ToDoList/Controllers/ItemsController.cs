@@ -8,6 +8,12 @@ namespace ToDoList.Controllers
     {
 
         [HttpGet("/items")]
+        //Route name-- the route is index(), per restful requirements
+
+        //url path -- we specify the path /items in our route decorator
+
+        // http method-- the route decorator denotes that this route   will respond to GET requests by using the httpget method.
+       //purpose -- this route is meant to display a list of all items
         public ActionResult Index()
         {
             List<Item> allItems = Item.GetAll();
@@ -35,9 +41,9 @@ namespace ToDoList.Controllers
         }
 
         [HttpGet("/items/{id}")]
-        public ActionResult Show(int id)
+        public ActionResult Show(int CanBeANyTHINGfORiD)
         {
-            Item foundItem = Item.Find(id);
+            Item foundItem = Item.Find(CanBeANyTHINGfORiD);
             return View(foundItem);
         }
 
